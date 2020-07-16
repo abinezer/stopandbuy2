@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block styles %}
+<style>
+.jumbotron{
+  text-align: centre;
+}
+</style>
+{% endblock %}
+
+
+{% block jumbotron%}
+<div class="jumbotron">
+  <h1>StopAndBuy</h1>
+  <p>Coming Soon....</p>
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+<h1>Search here</h1
+<div class = "container">
+  <form method = "post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type = "submit">Search</button>
+  </form>
+  <h2>Search Results for {{ text }}</h2
+</div>
+{% for product in oneProduct %}
+   <img src = {{product.imgURL}} />
+   <h1><a href = {{product.productURL}}>{{product.title}} </a></h1>
+   <h2>Price: {{product.price}} </h2>
+{% endfor %}
+
+
+{% endblock %}
