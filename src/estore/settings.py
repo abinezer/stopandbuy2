@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+#@y-qud)$=w#c3(t#4q40#3!j))yopt3d62_&qxzorv)c4hp8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['stopandbuy2.herokuapp.com','127.0.0.1']
 
