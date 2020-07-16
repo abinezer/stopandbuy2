@@ -1,1 +1,1 @@
-web: gunicorn estore.wsgi --log-file - 
+web: gunicorn src.estore.wsgi:application --log-file - 
