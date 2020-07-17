@@ -18,15 +18,16 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from polls import views
-from polls.views import HomeView
+from polls.views import ebaySearchView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', views.home, name='home'),
-    path('', HomeView.as_view(), name = 'home'),
+    path('', views.home, name='home'),
+    path('ebay/', ebaySearchView.as_view(), name = 'ebay'),
     #path('searchResults/', views.searchResults, name = 'searchResults'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name = 'contact'),
+    path('amazon/', views.amazon, name = 'amazon'),
 ]
 
 if settings.DEBUG:

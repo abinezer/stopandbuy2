@@ -1,4 +1,4 @@
 from django import forms
 
-class HomeForm(forms.Form):
+class ebaySearchForm(forms.Form):
     post = forms.CharField()
