@@ -1,1 +1,1 @@
-web: gunicorn estore.wsgi:application --log-file - 
+web: gunicorn estore.wsgi:application --preload --workers 1 
