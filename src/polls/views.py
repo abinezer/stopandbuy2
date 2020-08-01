@@ -1,8 +1,25 @@
-from django.shortcuts import render, redirect
+#from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from .forms import ebaySearchForm
 # Create your views here.
 from polls.templatetags.ebayFindingApi import *
+from polls.twitterPositivity import *
+
+from django.shortcuts import render
+from django.http import JsonResponse
+
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import generics
+from rest_framework import mixins
+#from core.TwitterPositivity import *
+
+#from .serializers import PostSerializer2, MyOutputSerializer
+#from .models import ebaySearch, ebayResults
+
+import requests
 
 class ebaySearchView(TemplateView):
     def get(self, request):
@@ -18,6 +35,8 @@ class ebaySearchView(TemplateView):
             products = search(text)
             context = {"oneProduct" : products, 'form': form, 'text': text}
         return render(request, 'ebay.html', context)
+
+
 
 """
 def searchResults(request):

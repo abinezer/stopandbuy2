@@ -1,6 +1,3 @@
-from ebaysdk.finding import Connection
-from polls.twitterPositivity import *
-
 import tweepy
 import textblob
 from operator import itemgetter
@@ -63,37 +60,7 @@ def twitterRating(searchItem):
             pos = pos + 1
     #totalReal
     #total
-    if totalReal == 0:
-        return 0
     rating = (pos/totalReal)*100
+    dict = {'searchQuery': searchItem, 'Rating': rating}
 
-    return rating #This is the real positivity after removing neutral statements
-
-
-
-def search(searchQuery):
-    api = Connection(config_file='polls/templatetags/ebay.yaml', debug=True, siteid = "EBAY-IN")
-
-    #searchQuery = 'pillows'
-    request = {
-        'keywords': str(searchQuery),
-        'paginationInput': {
-            'entriesPerPage': 10,
-            'pageNumber': 1
-        },
-
-    }
-
-    response = api.execute('findItemsByKeywords', request)
-
-    products = []
-    for item in response.reply.searchResult.item:
-        eachProduct = {}
-        eachProduct["title"] = item.title
-        eachProduct['TweetRate'] = twitterRating(item.title)
-        eachProduct["price"] = item.sellingStatus.currentPrice.value
-        eachProduct["imgURL"] = item.galleryURL
-        eachProduct["productURL"] = item.viewItemURL
-        products.append(eachProduct)
-
-    return products
+    return  dict #This is the real positivity after removing neutral statements

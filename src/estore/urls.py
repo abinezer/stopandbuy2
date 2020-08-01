@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('ebay/', ebaySearchView.as_view(), name = 'ebay'),
+    #path('ebay/', PostView2.as_view(), name = 'ebay'),
+    #path('ebay/', UserCreateOrListView.as_view(), name = 'ebay'),
     #path('searchResults/', views.searchResults, name = 'searchResults'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name = 'contact'),

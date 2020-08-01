@@ -1,4 +1,19 @@
 {% extends 'base.html' %}
+{% load rest_framework %}
+
+
+{% block ebay %}
+<html><body>
+
+<form action="{% url 'ebay' %}" method="POST">
+    {% csrf_token %}
+    {% render_form serializer %}
+    <input type="submit" value="Save">
+</form>
+
+</body></html>
+{% endblock %}
+
 
 {% block content %}
 <div class = "container">
@@ -15,6 +30,7 @@
    <img src = {{product.imgURL}} />
    <h1><a href = {{product.productURL}}>{{product.title}} </a></h1>
    <h2>Price: {{product.price}} </h2>
+   <h2>Twitter Rating: {{product.TweetRate}} </h2>
 {% endfor %}
 
 {% endblock %}
