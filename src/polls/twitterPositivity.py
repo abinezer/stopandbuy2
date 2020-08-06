@@ -7,6 +7,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from tweepy import OAuthHandler
 import pandas as pd
 
+nltk.download('vader_lexicon')
 
 def twitterRating(searchItem):
     consumer_key = '3OneA73Ncbprnx6Hv0yU57IZX'
