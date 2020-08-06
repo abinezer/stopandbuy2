@@ -7,6 +7,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from tweepy import OAuthHandler
 import pandas as pd
 
+
 def twitterRating(searchItem):
     consumer_key = '3OneA73Ncbprnx6Hv0yU57IZX'
     consumer_secret = 'Hex54vbdDaKYbYKj8fzir7Hgz1imP6vVbPs7Q6P7Ak0U9N7sKP'
@@ -60,7 +61,8 @@ def twitterRating(searchItem):
             pos = pos + 1
     #totalReal
     #total
+    if totalReal == 0:
+        return 0
     rating = (pos/totalReal)*100
-    dict = {'searchQuery': searchItem, 'Rating': rating}
 
-    return  dict #This is the real positivity after removing neutral statements
+    return rating #This is the real positivity after removing neutral statements
