@@ -6,7 +6,7 @@ import preprocessor as p
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from tweepy import OAuthHandler
 import pandas as pd
-
+import nltk
 nltk.download('vader_lexicon')
 
 def twitterRating(searchItem):
