@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'estore',
-    'polls'
+    'polls',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-if DEBUG == False:
+if DEBUG == False
     MEDIA_URL = '/media/'
     STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "static-only")
     #MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "media")
