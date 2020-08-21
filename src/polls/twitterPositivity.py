@@ -65,5 +65,5 @@ def twitterRating(searchItem):
     if totalReal == 0:
         return 0
     rating = (pos/totalReal)*100
-
+    rating = round(rating,2)
     return rating #This is the real positivity after removing neutral statements

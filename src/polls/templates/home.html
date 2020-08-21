@@ -10,21 +10,51 @@
 
 {% block jumbotron%}
 <div class="jumbotron">
-  <h1>A new experience to shopping on Amazon</h1>
+  <h1>A new experience to Shopping.</h1>
+  <h2>Beyond Customer Reviews...</h2>
 </div>
 
-<h2> Check the <a href = "ebay">ebay page</a> for ebay search. </h2>
-<h1> Check the <a href="amazon">amazon page</a> to shop a few more interesting products from amazon!</h1>
-<p> Stay tuned for an amazing Search experience on amazon!</p>
+<h2> Search a product below to know the Customer satisfaction for the product!</h2>
 
-<h1>The future of this website - </h1>
-<h3>Lets say you wanted to buy the Samsung Galaxy S20</h3>
-<h3>A search for the Galaxy S20 would have looked like this -</h3>
-<img src = https://m.media-amazon.com/images/I/81snLg55xeL._AC_UY218_.jpg>
-<a target="_blank" href="https://www.amazon.in/gp/product/B08445DF23/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=B08445DF23&linkCode=as2&tag=stopandbuy20a-21&linkId=7e4d3b6b64558043045bc5a399ec3270">Samsung Galaxy S20 (Cosmic Gray, 8GB RAM, 128GB Storage) with No Cost EMI/Additional Exchange Offers</a><img src="//ir-in.amazon-adsystem.com/e/ir?t=stopandbuy20a-21&l=am2&o=31&a=B08445DF23" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-<h3>Source 1 Score: 83.3% </h3>
-<h3>Source 2 Score: 95%</h3>
-<h3>Price</h3>
+<div class = "container">
+  <form method = "post">
+    {% csrf_token %}
+    {{form.post}}
+    <br>
+    <button type = "submit">Search</button>
+  </form>
+  <h2>Customer satisfaction score for {{ text }} is {{oneProduct}}%</h2>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+.container1 {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: blue;
+}
+
+.html {width: {{oneProduct}}%; background-color: #3eb859;}
+</style>
+<body>
+
+<p>{{text}}</p>
+<div class="container1">
+  <div class="skills html">{{oneProduct}}%</div>
+</div>
+
+</body>
+  <h2>Click the ad below to go to the amazon homepage!</h2>
+</div>
+
+
 {% endblock %}
 
 {% block googleAds%}

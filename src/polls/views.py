@@ -48,11 +48,27 @@ def searchResults(request):
     return render(request, template, context)
 """
 
+class HomeView(TemplateView):
+    def get(self, request):
+        form = ebaySearchForm()
+        return render(request, 'home.html', {'form': form})
+
+    def post(self, request):
+        form = ebaySearchForm(request.POST)
+        if form.is_valid():
+            text = form.cleaned_data['post']
+            form = ebaySearchForm()
+            #return redirect(contact)
+            products = twitterRating(text)
+            context = {"oneProduct" : products, 'form': form, 'text': text}
+        return render(request, 'home.html', context)
+
+"""
 def home(request):
     context = locals()
     template = 'home.html'
     return render(request, template, context)
-
+"""
 def about(request):
     context = locals()
     template = 'about.html'
