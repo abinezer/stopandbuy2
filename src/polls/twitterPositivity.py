@@ -10,10 +10,7 @@ import nltk
 nltk.download('vader_lexicon')
 
 def twitterRating(searchItem):
-    consumer_key = '3OneA73Ncbprnx6Hv0yU57IZX'
-    consumer_secret = 'Hex54vbdDaKYbYKj8fzir7Hgz1imP6vVbPs7Q6P7Ak0U9N7sKP'
-    access_token = '1063459000375595015-Wu9p2E2Uetcu5RNMPAC6nTgXvP85h6'
-    access_token_secret = 'sjTdexnrA91eQh7s3cvYspWVThzM28xzZQ2Zpjbde963g'
+    
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
